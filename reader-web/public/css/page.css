@@ -1,0 +1,32 @@
+i {
+    font-style: normal;
+}
+
+i:hover {
+    background-color: rgb(238, 238, 168);
+}
+
+.c1 {
+    background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(100,100,100,1) 50%, rgba(100,100,100,1) 100%);
+    background-position: 0 100%;
+    background-size: 100% 1px;
+    background-repeat: repeat-x;
+}
+
+.c2{
+    background: linear-gradient(to right,  rgba(100,100,100,1), rgba(100,100,100,1), rgba(100,100,100,1) 100%);
+    background-position: 0 100%;
+    background-size: 100% 1px;
+    background-repeat: repeat-x;
+}
+
+.c3 {
+    background: linear-gradient(to left, rgba(255,255,255,1) 0%, rgba(100,100,100,1) 50%, rgba(100,100,100,1) 100%);
+    background-position: 0 100%;
+    background-size: 100% 1px;
+    background-repeat: repeat-x;
+}
+
+.e1, .e2, .e3 {
+    font-style: normal;
+}

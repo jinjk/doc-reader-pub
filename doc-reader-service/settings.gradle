@@ -1,0 +1,4 @@
+rootProject.name = 'doc-reader-service'
+include 'doc-file-server'
+include 'gen-key'
+

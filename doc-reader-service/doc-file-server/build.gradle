@@ -1,0 +1,71 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.1' apply false
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+    id 'java-library'
+    id 'maven-publish'
+}
+
+group = 'com.j35utilsrv'
+version = '0.0.1'
+sourceCompatibility = '11'
+def userDir = System.getProperty('user.home')
+
+publishing {
+    publications {
+        myLibrary(MavenPublication) {
+            from components.java
+        }
+    }
+
+    repositories {
+        maven {
+            name = 'myRepo'
+            url = uri("${userDir}/.m2/repository")
+        }
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    maven{ url 'https://maven.aliyun.com/repository/central' }
+    maven{ url 'https://maven.aliyun.com/repository/public' }
+    maven{ url 'https://maven.aliyun.com/repository/gradle-plugin'}
+}
+
+dependencyManagement {
+    imports {
+        mavenBom org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-batch'
+    implementation 'org.springframework:spring-web'
+    implementation 'commons-io:commons-io:2.11.0'
+    implementation 'org.apache.pdfbox:pdfbox-tools:2.0.26'
+    implementation 'net.sf.cssbox:pdf2dom:2.0.1'
+    implementation 'com.google.code.gson:gson:2.8.9'
+    implementation 'commons-codec:commons-codec:1.15'
+    implementation 'org.apache.commons:commons-collections4:4.4'
+    implementation 'org.apache.httpcomponents:httpclient:4.5.13'
+
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
