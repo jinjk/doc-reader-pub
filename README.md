@@ -2,6 +2,10 @@
 
 Doc Reader is a reader app which provides functions like Chinese word segmentation and a built-in dictionary to show the meaning a Chinese vocabulary.
 Online demo can be found here [35utilsvr.com](http://35utilsvr.com)
+
+![Screenshot from 2023-01-25 14-19-04](https://user-images.githubusercontent.com/3221926/214494731-d963cb55-dfa0-480a-8f41-4975b55760f1.png)
+
+
 ## Components
 
 1. doc-reader-service
